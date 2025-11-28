@@ -200,5 +200,8 @@ terraform apply -var="compartment_id=..." -var="vm_count=5" -var='vm_names=["web
 
 -Ignore the "Debian" comment-- I previously tried to upload Debian Images and forgot to change it back to Ubuntu. Edited this in the main.tf. 
 -Full IP is hidden to protect my personal public IPs made for the VMs. 
+-Use terraform destroy -var="compartment_id=CHANGE_THIS_TO_OCID" -var="vm_count=3_OrPersonalAmountOfVMsMade"
+<img width="1603" height="669" alt="image" src="https://github.com/user-attachments/assets/aa0c6e06-1838-4ffa-b111-ce1aeacff6ee" />
+<img width="429" height="696" alt="image" src="https://github.com/user-attachments/assets/2799345e-5288-4c1f-ae10-9d4175b08adc" />
 
 
