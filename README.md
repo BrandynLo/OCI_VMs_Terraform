@@ -112,7 +112,7 @@ ssh-keygen -t rsa -b 2048 -f ~/.ssh/my_oci_key -N ""
 This SSH key is meant to be used for the VMs to link your personal machine to them. DO NOT LOSE THIS.
 These keys will be located in ~/.ssh/my_oci_key.pub
 
-### Optional Step *skip if you want* -- for Custom OCID Image from Bucket
+### Optional Step [skip if you want] Only useful for Custom OCID Image from Bucket
 
 
 OCI accepts the following formats for importing custom boot disk images:
@@ -161,7 +161,7 @@ Index for Storage > Buckets > Create a Bucket
 Upload Objects > Import your OCI Image file.  
 <img width="1807" height="863" alt="Screenshot 2025-11-10 171903" src="https://github.com/user-attachments/assets/97060031-4400-48ad-a8a1-1ea0f82ea89e" />
 
-## You will have to include your own OCID within the Main.tf and code the image to directly input from your Bucket to choose your own OS-- the current main.tf code is not meant for custom images uploaded from OCID Buckets (Ubuntu) but from standard images from OCI avaliable for ease of access to the current users using this.
+- You will have to include a personal bucket OCID within the Main.tf and code the image to directly input from your Bucket if you want to create VMs with custom images.
 
 ## [Go to this step if you skipped the optional Bucket Image]
 
@@ -175,12 +175,11 @@ Upload Objects > Import your OCI Image file.
 
 
 4. Apply the configuration to create the VCN:
+- ALL OF THIS IS CODE Syntax:
 ```bash
 # 1. Deploy (just pass compartment ID)
-terraform init
 terraform apply -var="compartment_id=ocid1.compartment.oc1..aaaa..."
 
-Optional Syntax:
 # 2. VMs with default names
 terraform apply -var="compartment_id=..." -var="vm_count=5"
 
@@ -208,9 +207,5 @@ terraform destroy -var="compartment_id=CHANGE_THIS_TO_OCID" -var="vm_count=3_OrP
 ```
 <img width="1603" height="669" alt="image" src="https://github.com/user-attachments/assets/aa0c6e06-1838-4ffa-b111-ce1aeacff6ee" />
 
-This is what it'd look like:
-
-
-<img width="429" height="696" alt="image" src="https://github.com/user-attachments/assets/2799345e-5288-4c1f-ae10-9d4175b08adc" />
 
 
