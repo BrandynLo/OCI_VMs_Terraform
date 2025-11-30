@@ -173,12 +173,15 @@ Upload Objects > Import your OCI Image file.
 <img width="736" height="285" alt="image" src="https://github.com/user-attachments/assets/ed88cc10-0a8f-43b3-8964-853f1e85338b" />
 
 
-
-4. Apply the configuration to create the VCN:
-- ALL OF THIS IS CODE Syntax:
+# Apply the configuration to create the VCN:
+- You will be prompted for your compartment OCID which is located in your compartment on the OCI website. 
+- Below is Code Syntax:
 ```bash
-# 1. Deploy (just pass compartment ID)
+# 1. Deploy
 terraform apply -var="compartment_id=ocid1.compartment.oc1..aaaa..."
+
+# 1.5 Deploy (Just one container)
+terraform apply
 
 # 2. VMs with default names
 terraform apply -var="compartment_id=..." -var="vm_count=5"
